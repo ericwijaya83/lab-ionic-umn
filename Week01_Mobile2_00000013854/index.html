@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/css/ionic.bundle.css" />
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+    <title>Budget Planner</title>
+</head>
+
+<body>
+    <ion-app>
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-title>Budget Planner</ion-title>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content id="parent">
+            <ion-grid id="child" class="align-items-center justify-content-center">
+                <ion-row>
+                    <ion-col>
+                        <ion-card id="biayaPengeluaran">
+                            <div>
+                                <ion-card-header>
+                                    <ion-card-title>Input Pengeluaran</ion-card-title>
+                                </ion-card-header>
+                            </div>
+                            <div padding>
+                                <ion-item>
+                                    <ion-input id="namaPengeluaran" placeholder="Nama Pengeluaran"></ion-input>
+                                </ion-item>
+                            </div>
+                            <div padding>
+                                <ion-item>
+                                    <ion-input id="jumlahPengeluaran" placeholder="Jumlah Pengeluaran"></ion-input>
+                                </ion-item>
+                            </div>
+                            <div class="ion-float-end" padding>
+                                <ion-button onClick="hapusPengeluaran()" size="medium" fill="outline" color="danger">
+                                    <ion-icon name="close" slot="start"></ion-icon>
+                                    Hapus
+                                </ion-button>
+                                <ion-button onClick="tambahPengeluaran()" size="medium" color="primary">
+                                    <ion-icon name="add" slot="start"></ion-icon>
+                                    Tambah
+                                </ion-button>
+                            </div>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+
+                <div id="printBiayaPengeluaran"></div>
+
+                <div id="printTotalPengeluaran" padding>
+                    Total Pengeluaran : Rp 0.00
+                </div>
+
+            </ion-grid>
+        </ion-content>
+
+        <ion-alert-controller></ion-alert-controller>
+
+    </ion-app>
+</body>
+
+</html>
+
+<style>
+    @media only screen and (min-width: 700px) {
+        #parent {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            padding: 1em;
+        }
+
+        #child {
+            position: absolute;
+            width: 50%;
+            height: 20%;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+
+    }
+</style>
