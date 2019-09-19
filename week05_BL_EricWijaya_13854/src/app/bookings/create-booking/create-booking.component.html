@@ -1,0 +1,29 @@
+<ion-header translucent>
+    <ion-toolbar>
+        <ion-title>{{ loadedPlace.title }}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12" size-sm="8" offset-sm="2" text-center>
+                <ion-img [src]="loadedPlace.imgUrl"></ion-img>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="12" size-sm="8" offset-sm="2" text-center>
+                <ion-text>
+                    <p>{{ loadedPlace.description }}</p>
+                    <p>{{ loadedPlace.price | currency }}</p>
+                </ion-text>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="12" size-sm="8" offset-sm="2" text-center>
+                <ion-button expand="block" color="primary" (click)="bookThisPlace()">Book Now</ion-button>
+                <ion-button expand="block" color="danger" fill="outline" (click)="closeModal()">Cancel</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

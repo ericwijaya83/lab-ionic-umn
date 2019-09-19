@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>My Bookings</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button menu="main"></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item-sliding *ngFor="let booking of bookings" #slidingItem>
+            <ion-item-options side="end">
+                <ion-item-option (click)="deleteBooking(booking.id, slidingItem)" color="danger">
+                    <ion-icon name="trash" slot="icon-only"></ion-icon>
+                </ion-item-option>
+            </ion-item-options>
+
+            <ion-item>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="12" size-sm="8" offset-sm="2">
+                            <ion-text>
+                                <ion-label>{{ booking.placeTitle }}</ion-label>
+                            </ion-text>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col size="12" size-sm="8" offset-sm="2">
+                            <ion-text color="medium">
+                                <ion-label>Guests: {{ booking.guestNumber }}</ion-label>
+                            </ion-text>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>
