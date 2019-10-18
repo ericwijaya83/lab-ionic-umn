@@ -1,0 +1,7 @@
+{
+  "name": "umn-homes",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
